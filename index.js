@@ -1,6 +1,6 @@
 function getdetails(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://localhost/periodicelementstable/data.json",false);
+    xmlhttp.open("GET","https://vignesheg.github.io/periodictable/data.json",false);
     xmlhttp.send();
     if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
         var result  = xmlhttp.responseText;
