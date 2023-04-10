@@ -1,6 +1,6 @@
 function getdetails(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","https://vignesheg.github.io/periodictable/data.json",false);
+    xmlhttp.open("GET","http://localhost/periodicelementstable/data.json",false);
     xmlhttp.send();
     if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
         var result  = xmlhttp.responseText;
@@ -8,10 +8,28 @@ function getdetails(){
     }
 
     var searchvalues = document.forms["searchform"]["searchvalue"].value;
-   
+    console.log(typeof(searchvalues));
+    if(searchvalues.length < 3){
     var ordres = obj.find(function(order){
-        return order.Symbol === searchvalues;
+        console.log(typeof(searchvalues));
+        searchvalues = searchvalues.charAt(0).toUpperCase() + searchvalues.slice(1);
+        if(order.Symbol == searchvalues){
+            return order.Symbol === searchvalues;
+        } else if(order.AtomicNumber == searchvalues){
+        return order.AtomicNumber == searchvalues;
+        }
     })
+    }else if(searchvalues.length > 4){
+    var ordres = obj.find(function(order){
+        searchvalues = searchvalues.charAt(0).toUpperCase() + searchvalues.slice(1);
+        return order.Element === searchvalues;
+    
+    })
+    }
+  
+
+
+
     var headerdata="";
     var elementdata="";
   
