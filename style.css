@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerdiv,
+.elementlistdiv {
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+div.heading {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+
+.data-wrapper,li {
+    font-size: 1rem;
+}
+
+
+
+
+.button {
+    background-color: #0077ffde;
+    border: none;
+    color: white;
+    padding: 9.5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 40px;
+}
+
+.form-wrapper {
+    padding: 3px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #aaaaaa;  
+}
+
+.background{
+    box-shadow: 2px 2px 3px #aaaaaa;  
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.chartdimensions{
+    width: 10rem;
+     height: 10rem;
+ }
+
+ div.headerdiv div{
+    max-width: 50em;
+ }
+
+.listborder{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 10px;
+    margin-left: 8%;
+    margin-right: 8%;
+
+}
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vh - 75px);
+}
+
+.loader::before,.loader::after{
+   content: '';
+   border: 1em solid #ff5733;
+   border-radius: 50%;
+   width: inherit;
+   height: inherit;
+   position: absolute;
+   top: 0;
+animation: loader 2s linear infinite;
+}
+
+.loader::before{
+    animation-delay:.5s;
+
+}
+
+@keyframes loader {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.header:hover{
+    background-color: blue;
+}

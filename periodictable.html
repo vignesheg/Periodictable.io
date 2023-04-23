@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="data.js"></script>
+    <script src="index2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    body{
+      background-color: rgba(241, 241, 241, 0.507);
+    }
+
+    button {
+        border: none;
+        border-radius: 5px;
+        width: auto;
+    }
+
+
+
+    .data-container {
+        z-index: 5;
+        position: absolute;
+        background-color: rgba(244, 244, 244, 0.85);
+        width: 100%;
+        padding: 30px;
+
+    }
+
+    .list-container {
+        background-color: white;
+        border-radius: 10px;
+        width: 100%;
+        font-size: medium;
+        padding: 10px;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+ 
+}
+
+</style>
+
+<body>
+    <div class="data-container" id="dataContainer" style="display: none;">
+
+        <div class="list-container" id="list-container">
+            <div id="datahider" style="float: right;position: sticky;cursor: pointer;" class="">
+                <i class="fa-solid fa-x fa-2xl" style="color: #404040;"></i>
+            </div><br>
+            <hr>
+            <div>
+                <ul id="elementdatas">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="h-100 d-flex align-items-center justify-content-center container" id="table-container" style="display: none;">
+        <div class=" table-container">
+            <table class="">
+                <tr>
+                    <!-- 1st row-->
+                    <td>
+                        <button class="elementcontainer" onclick="datafinder('H')" id="H"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">1</div>
+                            <div style="text-align: center;font-weight: bolder;">H<div style="font-size: x-small;">
+                                    Hydroden
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('He')" class="elementcontainer"
+                            style="background-color: #ffe7eb;color: #cd1d5e;">
+                            <div style="font-size: x-small;">2</div>
+                            <div style="text-align: center;font-weight: bolder;">He<div style="font-size: x-small;">
+                                    Helium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                <!-- 2st row-->
+                <tr>
+                    <td>
+                        <button onclick="datafinder('Li')" class="elementcontainer"
+                            style="background-color: #d8f8ff;color: #00758c;">
+                            <div style="font-size: x-small;">3</div>
+                            <div style="text-align: center;font-weight: bolder;">H<div style="font-size: x-small;">
+                                    Lithium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Be')" class="elementcontainer"
+                            style="background-color: #ffe7e7;color: #d60024;">
+                            <div style="font-size: x-small;">4</div>
+                            <div style="text-align: center;font-weight: bolder;">Be<div style="font-size: x-small;">
+                                    Beryllium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('B')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">5</div>
+                            <div style="text-align: center;font-weight: bolder;">B<div style="font-size: x-small;">
+                                    Boron
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('C')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">6</div>
+                            <div style="text-align: center;font-weight: bolder;">C<div style="font-size: x-small;">
+                                    Carbon
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('N')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">7</div>
+                            <div style="text-align: center;font-weight: bolder;">N<div style="font-size: x-small;">
+                                    Nitrogen
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('O')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">8</div>
+                            <div style="text-align: center;font-weight: bolder;">O<div style="font-size: x-small;">
+                                    Oxygen
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('F')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">9</div>
+                            <div style="text-align: center;font-weight: bolder;">F<div style="font-size: x-small;">
+                                    Fluorine
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ne')" class="elementcontainer"
+                            style="background-color: #ffe7eb;color: #cd1d5e;">
+                            <div style="font-size: x-small;">10</div>
+                            <div style="text-align: center;font-weight: bolder;">Ne<div style="font-size: x-small;">
+                                    Neon
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                <!-- 3st row-->
+                <tr>
+                    <td>
+                        <button onclick="datafinder('Na')" class="elementcontainer"
+                            style="background-color: #d8f8ff;color: #00758c;">
+                            <div style="font-size: x-small;">11</div>
+                            <div style="text-align: center;font-weight: bolder;">Na<div style="font-size: x-small;">
+                                    Sodium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Mg')" class="elementcontainer"
+                            style="background-color: #ffe7e7;color: #d60024;">
+                            <div style="font-size: x-small;">12</div>
+                            <div style="text-align: center;font-weight: bolder;">Mg<div style="font-size: x-small;">
+                                    Magnesium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('Al')" class="elementcontainer"
+                            style="background-color: #d6f9e8;color: #227754;">
+                            <div style="font-size: x-small;">13</div>
+                            <div style="text-align: center;font-weight: bolder;">Al<div style="font-size: x-small;">
+                                    Aluminium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Si')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">14</div>
+                            <div style="text-align: center;font-weight: bolder;">Si<div style="font-size: x-small;">
+                                    Silicon
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('P')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">15</div>
+                            <div style="text-align: center;font-weight: bolder;">P<div style="font-size: x-small;">
+                                    Phosphorus
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('S')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">16</div>
+                            <div style="text-align: center;font-weight: bolder;">S<div style="font-size: x-small;">
+                                    Sulphur
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Cl')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">17</div>
+                            <div style="text-align: center;font-weight: bolder;">Cl<div style="font-size: x-small;">
+                                    Chlorine
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ar')" class="elementcontainer"
+                            style="background-color: #ffe7eb;color: #cd1d5e;">
+                            <div style="font-size: x-small;">18</div>
+                            <div style="text-align: center;font-weight: bolder;">Ar<div style="font-size: x-small;">
+                                    Argon
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                <!-- 4st row-->
+                <tr>
+                    <td>
+                        <button onclick="datafinder('K')" class="elementcontainer"
+                            style="background-color: #d8f8ff;color: #00758c;">
+                            <div style="font-size: x-small;">19</div>
+                            <div style="text-align: center;font-weight: bolder;">K<div style="font-size: x-small;">
+                                    Potassium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ca')" class="elementcontainer"
+                            style="background-color: #ffe7e7;color: #d60024;">
+                            <div style="font-size: x-small;">20</div>
+                            <div style="text-align: center;font-weight: bolder;">Ca<div style="font-size: x-small;">
+                                    Calcium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('Sc')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">21</div>
+                            <div style="text-align: center;font-weight: bolder;">Sc<div style="font-size: x-small;">
+                                    Scandium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ti')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">22</div>
+                            <div style="text-align: center;font-weight: bolder;">Ti<div style="font-size: x-small;">
+                                    Titanium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('V')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">23</div>
+                            <div style="text-align: center;font-weight: bolder;">V<div style="font-size: x-small;">
+                                    Vandium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Cr')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">24</div>
+                            <div style="text-align: center;font-weight: bolder;">Cr<div style="font-size: x-small;">
+                                    Chromium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Mn')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">25</div>
+                            <div style="text-align: center;font-weight: bolder;">Mn<div style="font-size: x-small;">
+                                    Manganese
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Fe')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">26</div>
+                            <div style="text-align: center;font-weight: bolder;">Fe<div style="font-size: x-small;">
+                                    Iron
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Co')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">27</div>
+                            <div style="text-align: center;font-weight: bolder;">Co<div style="font-size: x-small;">
+                                    Cobalt
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ni')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">28</div>
+                            <div style="text-align: center;font-weight: bolder;">Ni<div style="font-size: x-small;">
+                                    Nickel
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Cu')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">29</div>
+                            <div style="text-align: center;font-weight: bolder;">Cu<div style="font-size: x-small;">
+                                    Copper
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Zn')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">30</div>
+                            <div style="text-align: center;font-weight: bolder;">Zn<div style="font-size: x-small;">
+                                    Zinc
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ga')" class="elementcontainer"
+                            style="background-color: #d6f9e8;color: #227754;">
+                            <div style="font-size: x-small;">31</div>
+                            <div style="text-align: center;font-weight: bolder;">Ga<div style="font-size: x-small;">
+                                    Gallium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ge')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">32</div>
+                            <div style="text-align: center;font-weight: bolder;">Ge<div style="font-size: x-small;">
+                                    Germanium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('As')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">33</div>
+                            <div style="text-align: center;font-weight: bolder;">As<div style="font-size: x-small;">
+                                    Arsenic
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Se')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">34</div>
+                            <div style="text-align: center;font-weight: bolder;">Se<div style="font-size: x-small;">
+                                    Selenium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Br')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">35</div>
+                            <div style="text-align: center;font-weight: bolder;">Br<div style="font-size: x-small;">
+                                    Bromium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Kr')" class="elementcontainer"
+                            style="background-color: #ffe7eb;color: #cd1d5e;">
+                            <div style="font-size: x-small;">36</div>
+                            <div style="text-align: center;font-weight: bolder;">Kr<div style="font-size: x-small;">
+                                    Kryptonium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                <!-- 5st row-->
+                <tr>
+                    <td>
+                        <button onclick="datafinder('Rb')" class="elementcontainer"
+                            style="background-color: #d8f8ff;color: #00758c;">
+                            <div style="font-size: x-small;">37</div>
+                            <div style="text-align: center;font-weight: bolder;">Rb<div style="font-size: x-small;">
+                                    Rubidium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Sr')" class="elementcontainer"
+                            style="background-color: #ffe7e7;color: #d60024;">
+                            <div style="font-size: x-small;">38</div>
+                            <div style="text-align: center;font-weight: bolder;">Sr<div style="font-size: x-small;">
+                                    Strontium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('Y')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">39</div>
+                            <div style="text-align: center;font-weight: bolder;">Y<div style="font-size: x-small;">
+                                    Yittrium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Zr')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">40</div>
+                            <div style="text-align: center;font-weight: bolder;">Zr<div style="font-size: x-small;">
+                                    Zirconium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Nb')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">41</div>
+                            <div style="text-align: center;font-weight: bolder;">Nb<div style="font-size: x-small;">
+                                    Nibonium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Mo')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">42</div>
+                            <div style="text-align: center;font-weight: bolder;">Mo<div style="font-size: x-small;">
+                                    Molybdenum
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Tc')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">43</div>
+                            <div style="text-align: center;font-weight: bolder;">Tc<div style="font-size: x-small;">
+                                    Technelium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ru')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">44</div>
+                            <div style="text-align: center;font-weight: bolder;">Ru<div style="font-size: x-small;">
+                                    Ruthenium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Rh')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">45</div>
+                            <div style="text-align: center;font-weight: bolder;">Rh<div style="font-size: x-small;">
+                                    Rhodium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Pd')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">46</div>
+                            <div style="text-align: center;font-weight: bolder;">Pd<div style="font-size: x-small;">
+                                    Palladium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ag')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">47</div>
+                            <div style="text-align: center;font-weight: bolder;">47<div style="font-size: x-small;">
+                                    Silver
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Cd')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">48</div>
+                            <div style="text-align: center;font-weight: bolder;">Cd<div style="font-size: x-small;">
+                                    Cadmium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('In')" class="elementcontainer"
+                            style="background-color: #d6f9e8;color: #227754;">
+                            <div style="font-size: x-small;">49</div>
+                            <div style="text-align: center;font-weight: bolder;">In<div style="font-size: x-small;">
+                                    Indium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Sn')" class="elementcontainer"
+                            style="background-color: #d6f9e8;color: #227754;">
+                            <div style="font-size: x-small;">50</div>
+                            <div style="text-align: center;font-weight: bolder;">Sn<div style="font-size: x-small;">
+                                    Tin`
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Sb')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">51</div>
+                            <div style="text-align: center;font-weight: bolder;">Sn<div style="font-size: x-small;">
+                                    Antimony
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Te')" class="elementcontainer"
+                            style="background-color: #fef7e0;color: #945700;">
+                            <div style="font-size: x-small;">52</div>
+                            <div style="text-align: center;font-weight: bolder;">Te<div style="font-size: x-small;">
+                                    Tellurium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('I')" class="elementcontainer"
+                            style="background-color: #d5edff;color: #1a73e8;">
+                            <div style="font-size: x-small;">53</div>
+                            <div style="text-align: center;font-weight: bolder;">I<div style="font-size: x-small;">
+                                    Iodine
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Xe')" class="elementcontainer"
+                            style="background-color: #ffe7eb;color: #cd1d5e;">
+                            <div style="font-size: x-small;">54</div>
+                            <div style="text-align: center;font-weight: bolder;">Xe<div style="font-size: x-small;">
+                                    Xenon
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                <!-- 6st row-->
+                <tr>
+                    <td>
+                        <button onclick="datafinder('Cs')" class="elementcontainer"
+                            style="background-color: #d8f8ff;color: #00758c;">
+                            <div style="font-size: x-small;">55</div>
+                            <div style="text-align: center;font-weight: bolder;">Cs<div style="font-size: x-small;">
+                                    Caesium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ba')" class="elementcontainer"
+                            style="background-color: #ffe7e7;color: #d60024;">
+                            <div style="font-size: x-small;">56</div>
+                            <div style="text-align: center;font-weight: bolder;">Ba<div style="font-size: x-small;">
+                                    Barium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button onclick="datafinder('La')" class="elementcontainer"
+                            style="background-color: #dff3ff;color: #003355;">
+                            <div style="font-size: x-small;">57</div>
+                            <div style="text-align: center;font-weight: bolder;">La<div style="font-size: x-small;">
+                                    Lanthanum
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+
+                    <td>
+                        <button onclick="datafinder('Hf')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">72</div>
+                            <div style="text-align: center;font-weight: bolder;">Hf<div style="font-size: x-small;">
+                                    Hafnium
+                                </div>
+
+                            </div>
+                        </button>
+                    </td>
+                    <td>
+                        <button onclick="datafinder('Ta')" class="elementcontainer"
+                            style="background-color: #f3e8fd;color: #6232ec;">
+                            <div style="font-size: x-small;">73</div>
+                            <div style="text-align: center;font-weight: bolder;">Ta<div style="font-size: x-small;">
+                                    Tantalum
+                                </div>
+
+                            </div>
+        </div>
+        </td>
+        <td>
+            <button onclick="datafinder('W')" class="elementcontainer"
+                style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">74</div>
+                <div style="text-align: center;font-weight: bolder;">W<div style="font-size: x-small;">Tungsten
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Re')" class="elementcontainer"
+                style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">75</div>
+                <div style="text-align: center;font-weight: bolder;">Re<div style="font-size: x-small;">
+                        Rhenium
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Os')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">76</div>
+                <div style="text-align: center;font-weight: bolder;">Os<div style="font-size: x-small;">Osmium
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Ir')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">77</div>
+                <div style="text-align: center;font-weight: bolder;">Ir<div style="font-size: x-small;">Iridium
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Pt')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">78</div>
+                <div style="text-align: center;font-weight: bolder;">Pt<div style="font-size: x-small;">Platinum
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Au')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">79</div>
+                <div style="text-align: center;font-weight: bolder;">Au<div style="font-size: x-small;">Gold
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Hg')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                <div style="font-size: x-small;">80</div>
+                <div style="text-align: center;font-weight: bolder;">Hg<div style="font-size: x-small;">Mercury
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Tl')" class="elementcontainer" style="background-color: #d6f9e8;color: #227754;">
+                <div style="font-size: x-small;">81</div>
+                <div style="text-align: center;font-weight: bolder;">Tl<div style="font-size: x-small;">Thallium
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Pb')" class="elementcontainer" style="background-color: #d6f9e8;color: #227754;">
+                <div style="font-size: x-small;">82</div>
+                <div style="text-align: center;font-weight: bolder;">Pb<div style="font-size: x-small;">Lead
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Bi')" class="elementcontainer" style="background-color: #d6f9e8;color: #227754;">
+                <div style="font-size: x-small;">83</div>
+                <div style="text-align: center;font-weight: bolder;">Bi<div style="font-size: x-small;">Bismuth
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Po')" class="elementcontainer" style="background-color: #d6f9e8;color: #227754;">
+                <div style="font-size: x-small;">84</div>
+                <div style="text-align: center;font-weight: bolder;">Po<div style="font-size: x-small;">Potassium
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('At')" class="elementcontainer" style="background-color: #d6f9e8;color: #227754;">
+                <div style="font-size: x-small;">85</div>
+                <div style="text-align: center;font-weight: bolder;">At<div style="font-size: x-small;">Astatine
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        <td>
+            <button onclick="datafinder('Rn')" class="elementcontainer" style="background-color: #ffe7eb;color: #cd1d5e;">
+                <div style="font-size: x-small;">86</div>
+                <div style="text-align: center;font-weight: bolder;">Rn<div style="font-size: x-small;">Radon
+                    </div>
+
+                </div>
+            </button>
+        </td>
+        </tr>
+        <!-- 7st row-->
+        <tr>
+            <td>
+                <button onclick="datafinder('Fr')" class="elementcontainer" style="background-color: #d8f8ff;color: #00758c;">
+                    <div style="font-size: x-small;">87</div>
+                    <div style="text-align: center;font-weight: bolder;">Fr<div style="font-size: x-small;">Francium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Ra')" class="elementcontainer" style="background-color: #ffe7e7;color: #d60024;">
+                    <div style="font-size: x-small;">88</div>
+                    <div style="text-align: center;font-weight: bolder;">Ra<div style="font-size: x-small;">Radium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td></td>
+            <td>
+                <button onclick="datafinder('Ac')" class="elementcontainer" style="background: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">89</div>
+                    <div style="text-align: center;font-weight: bolder;">Ac<div style="font-size: x-small;">Actinium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+
+            <td>
+                <button onclick="datafinder('Rf')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                    <div style="font-size: x-small;">90</div>
+                    <div style="text-align: center;font-weight: bolder;">Rf<div style="font-size: x-small;">Rutherfordium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Db')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                    <div style="font-size: x-small;">91</div>
+                    <div style="text-align: center;font-weight: bolder;">Db<div style="font-size: x-small;">Dubinium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Sg')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                    <div style="font-size: x-small;">92</div>
+                    <div style="text-align: center;font-weight: bolder;">Sg<div style="font-size: x-small;">Seaborgium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Bh')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                    <div style="font-size: x-small;">93</div>
+                    <div style="text-align: center;font-weight: bolder;">Bh<div style="font-size: x-small;">Bhorium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Hs')" class="elementcontainer" style="background-color: #f3e8fd;color: #6232ec;">
+                    <div style="font-size: x-small;">94</div>
+                    <div style="text-align: center;font-weight: bolder;">Hs<div style="font-size: x-small;">Hassium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Mt')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">95</div>
+                    <div style="text-align: center;font-weight: bolder;">Mt<div style="font-size: x-small;">Meitnerium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Ds')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">96</div>
+                    <div style="text-align: center;font-weight: bolder;">Ds<div style="font-size: x-small;">Darmstadium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Rg')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">97</div>
+                    <div style="text-align: center;font-weight: bolder;">Rg<div style="font-size: x-small;">Roentgenium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Cn')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">98</div>
+                    <div style="text-align: center;font-weight: bolder;">Cn<div style="font-size: x-small;">Copernicium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Nh')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">99</div>
+                    <div style="text-align: center;font-weight: bolder;">Nh<div style="font-size: x-small;">Nihonium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Fl')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">100</div>
+                    <div style="text-align: center;font-weight: bolder;">Fl<div style="font-size: x-small;">Flerovium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Mc')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">101</div>
+                    <div style="text-align: center;font-weight: bolder;">Mc<div style="font-size: x-small;">Moscovium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Lv')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">102</div>
+                    <div style="text-align: center;font-weight: bolder;">Lv<div style="font-size: x-small;">Livermorium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Ts')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">103</div>
+                    <div style="text-align: center;font-weight: bolder;">Ts<div style="font-size: x-small;">Tennessine
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Og')" class="elementcontainer" style="background-color: #e7e7ea;color: #3f374f;">
+                    <div style="font-size: x-small;">104</div>
+                    <div style="text-align: center;font-weight: bolder;">Og<div style="font-size: x-small;">Oganesson
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="18">
+                <div style="padding: 15px;"></div>
+            </td>
+        </tr>
+        <!-- 8th row-->
+        <tr>
+            <td colspan="5"></td>
+            <td>
+                <button onclick="datafinder('Ce')" class="elementcontainer" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">58</div>
+                    <div style="text-align: center;font-weight: bolder;">Ce<div style="font-size: x-small;">Cerium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Pr')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">59</div>
+                    <div style="text-align: center;font-weight: bolder;">Pr<div style="font-size: x-small;">praseodymium
+                        </div>
+
+                    </div>
+                </button>
+
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Nd')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">60</div>
+                    <div style="text-align: center;font-weight: bolder;">Nd<div style="font-size: x-small;">Neodymium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Pm')" class="elementcontainer" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">61</div>
+                    <div style="text-align: center;font-weight: bolder;">Pm<div style="font-size: x-small;">Promethium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Sm')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">62</div>
+                    <div style="text-align: center;font-weight: bolder;">Sm<div style="font-size: x-small;">Samarium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Eu')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">63</div>
+                    <div style="text-align: center;font-weight: bolder;">Eu<div style="font-size: x-small;">Europium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Gd')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">64</div>
+                    <div style="text-align: center;font-weight: bolder;">Gd<div style="font-size: x-small;">Gadolinium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Tb')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">65</div>
+                    <div style="text-align: center;font-weight: bolder;">Tb<div style="font-size: x-small;">Terbium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Dy')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">66</div>
+                    <div style="text-align: center;font-weight: bolder;">Dy<div style="font-size: x-small;">Dysprosium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Ho')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">67</div>
+                    <div style="text-align: center;font-weight: bolder;">Ho<div style="font-size: x-small;">Holmium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Er')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">68</div>
+                    <div style="text-align: center;font-weight: bolder;">Er<div style="font-size: x-small;">Erbium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Tm')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">69</div>
+                    <div style="text-align: center;font-weight: bolder;">Tm<div style="font-size: x-small;">Thulium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Yb')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">70</div>
+                    <div style="text-align: center;font-weight: bolder;">Yb<div style="font-size: x-small;">Ytterbium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer"onclick="datafinder('Lu')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">71</div>
+                    <div style="text-align: center;font-weight: bolder;">Lu<div style="font-size: x-small;">Lutetium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+        </tr>
+        <!-- 9th row-->
+        <tr>
+            <td colspan="5"></td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Th')" style="background-color: #dff3ff;color: #003355;">
+                    <div style="font-size: x-small;">72</div>
+                    <div style="text-align: center;font-weight: bolder;">Th<div style="font-size: x-small;">Thorium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button onclick="datafinder('Pa')" class="elementcontainer" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">73</div>
+                    <div style="text-align: center;font-weight: bolder;">Pa<div style="font-size: x-small;">Protactinium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('U')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">74</div>
+                    <div style="text-align: center;font-weight: bolder;">U<div style="font-size: x-small;">Uranium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Np')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">75</div>
+                    <div style="text-align: center;font-weight: bolder;">Np<div style="font-size: x-small;">Neptunium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Pu')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">76</div>
+                    <div style="text-align: center;font-weight: bolder;">Pu<div style="font-size: x-small;">plutonium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Am')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">77</div>
+                    <div style="text-align: center;font-weight: bolder;">Am<div style="font-size: x-small;">Americium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Cm')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">78</div>
+                    <div style="text-align: center;font-weight: bolder;">Cm<div style="font-size: x-small;">Curium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Bk')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">79</div>
+                    <div style="text-align: center;font-weight: bolder;">Bk<div style="font-size: x-small;">Berkelium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Cf')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">80</div>
+                    <div style="text-align: center;font-weight: bolder;">Cf<div style="font-size: x-small;">Californium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Es')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">81</div>
+                    <div style="text-align: center;font-weight: bolder;">Es<div style="font-size: x-small;">Einsteinium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Fm')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">82</div>
+                    <div style="text-align: center;font-weight: bolder;">Fm<div style="font-size: x-small;">Fermium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Md')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">83</div>
+                    <div style="text-align: center;font-weight: bolder;">Md<div style="font-size: x-small;">Mendelevium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('No')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">84</div>
+                    <div style="text-align: center;font-weight: bolder;">No<div style="font-size: x-small;">Nobelium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+            <td>
+                <button class="elementcontainer" onclick="datafinder('Lr')" style="background-color: #ffe6d4;color: #c73200;">
+                    <div style="font-size: x-small;">85</div>
+                    <div style="text-align: center;font-weight: bolder;">Lr<div style="font-size: x-small;">Lawrencium
+                        </div>
+
+                    </div>
+                </button>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
